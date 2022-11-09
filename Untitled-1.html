@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+ 
+  </head>
+
+  <body>
+    <main>
+      <h1>Verificador de Triangulo</h1>
+        <h2>Digite abaixo o valores para verificar se é triangulo:</h2>
+      </div>
+      <div class="input-container">
+        <input id="input1" type="text" />
+        <input id="input2" type="text" />
+        <input id="input3" type="text" />
+        <button onclick="calculaPiramide()">Calcular</button>
+        <button onclick="reset()">Resetar</button>
+        <h3 id="retorno">Calculando...</h3>
+    </main>
+  </body>
+</html>
+
+<script>
+
+function calculaPiramide(){
+  const n1 = document.getElementById('input1').value;
+  const n2 = document.getElementById('input2').value;
+  const n3 = document.getElementById('input3').value;
+  const valor = document.querySelector("#retorno");
+
+ if (n1 + n2 > n3 )&&( n1 + n3 > n2 )&& (n2 + n3 > n1) {
+    console.log(n1);
+    valor.textContent = "Medidas informadas formam um triangulo.";
+  } else {
+    valor.textContent = "Medidas informadas não formam um triangulo.";
+  }
+};
+
+function reset (){
+  document.getElementById('input1').value = "";
+  document.getElementById('input2').value = "";
+  document.getElementById('input3').value = "";
+  document.querySelector('#retorno').textContent = "Calculando...";
+}
+</script>
